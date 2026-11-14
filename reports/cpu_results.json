@@ -1,0 +1,508 @@
+{
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "machine": "arm64",
+    "python": "3.12.7",
+    "numpy": "2.5.4",
+    "zlib": "1.2.12",
+    "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)",
+    "omp_num_threads": "unset",
+    "build_command": "c++ -O3 -std=c++17 -Wall -Wextra -Wpedantic  -fPIC -shared src/pixelpack.cpp -lz",
+    "repeats": 7,
+    "timer": "perf_counter_ns; medians, seven repetitions after one warm-up",
+    "seed": 2026569,
+    "cuda": "NOT compiled or run: no nvcc / NVIDIA GPU in authoring environment",
+    "scope": "local execution environment; hardware was not reserved exclusively",
+    "implementation_sha256": {
+      "src/pixelpack.cpp": "67082b9c0e4503a8f44c8ee14b142f77a10dce144c5dcb25a6debdc930ef1d9a",
+      "src/pixelpack.h": "7cebf1cc1eaee7bb59bcbb3927c5dc61bed0641dc45506f3032b90d5cff10b93",
+      "pixelpack.py": "973a63c3a628482c24795e02dccc0d11b5df184225bd51c986eb16a847b93747"
+    }
+  },
+  "datasets": [
+    {
+      "name": "u8_constant",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "uint8",
+      "origin": "synthetic",
+      "input_bytes": 262656,
+      "sha256": "0910437a5d92e817686e97eb069581a584ca9b0ddfd8f69a728a055b4811bf0e",
+      "modes": {
+        "raw": {
+          "container_bytes": 305,
+          "payload_bytes": 277,
+          "chosen_predictor": false,
+          "encode_ms_median": 0.382,
+          "encode_ms_min": 0.377041,
+          "encode_ms_max": 0.388375,
+          "decode_ms_median": 0.074875,
+          "encode_input_MiB_s": 655.728484947644
+        },
+        "predict": {
+          "container_bytes": 307,
+          "payload_bytes": 279,
+          "chosen_predictor": true,
+          "encode_ms_median": 0.722792,
+          "encode_ms_min": 0.697459,
+          "encode_ms_max": 0.840542,
+          "decode_ms_median": 0.209791,
+          "encode_input_MiB_s": 346.55652144738735
+        },
+        "adaptive": {
+          "container_bytes": 305,
+          "payload_bytes": 277,
+          "chosen_predictor": false,
+          "encode_ms_median": 1.091792,
+          "encode_ms_min": 1.060709,
+          "encode_ms_max": 1.144542,
+          "decode_ms_median": 0.061167,
+          "encode_input_MiB_s": 229.42857362025
+        }
+      }
+    },
+    {
+      "name": "u8_horizontal_ramp",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "uint8",
+      "origin": "synthetic",
+      "input_bytes": 262656,
+      "sha256": "a549e9fdb8525d47d5c3433bafbbd31205c1e0dcb4c430990ea608af7c7885df",
+      "modes": {
+        "raw": {
+          "container_bytes": 2084,
+          "payload_bytes": 2056,
+          "chosen_predictor": false,
+          "encode_ms_median": 0.385209,
+          "encode_ms_min": 0.384917,
+          "encode_ms_max": 0.424708,
+          "decode_ms_median": 0.031791,
+          "encode_input_MiB_s": 650.2659108432046
+        },
+        "predict": {
+          "container_bytes": 620,
+          "payload_bytes": 592,
+          "chosen_predictor": true,
+          "encode_ms_median": 0.735167,
+          "encode_ms_min": 0.708334,
+          "encode_ms_max": 0.768416,
+          "decode_ms_median": 0.20975,
+          "encode_input_MiB_s": 340.72296668648073
+        },
+        "adaptive": {
+          "container_bytes": 620,
+          "payload_bytes": 592,
+          "chosen_predictor": true,
+          "encode_ms_median": 1.125459,
+          "encode_ms_min": 1.109459,
+          "encode_ms_max": 1.161834,
+          "decode_ms_median": 0.213833,
+          "encode_input_MiB_s": 222.56544329913393
+        }
+      }
+    },
+    {
+      "name": "u8_vertical_ramp",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "uint8",
+      "origin": "synthetic",
+      "input_bytes": 262656,
+      "sha256": "4c52cebe285d213037d9a7d2f40d09f17bfbeb5c7cb722c0e18e66504c6fbc75",
+      "modes": {
+        "raw": {
+          "container_bytes": 1347,
+          "payload_bytes": 1319,
+          "chosen_predictor": false,
+          "encode_ms_median": 0.405875,
+          "encode_ms_min": 0.404333,
+          "encode_ms_max": 0.423041,
+          "decode_ms_median": 0.053917,
+          "encode_input_MiB_s": 617.1562211271944
+        },
+        "predict": {
+          "container_bytes": 307,
+          "payload_bytes": 279,
+          "chosen_predictor": true,
+          "encode_ms_median": 0.730083,
+          "encode_ms_min": 0.728208,
+          "encode_ms_max": 0.744958,
+          "decode_ms_median": 0.205917,
+          "encode_input_MiB_s": 343.09562234704816
+        },
+        "adaptive": {
+          "container_bytes": 307,
+          "payload_bytes": 279,
+          "chosen_predictor": true,
+          "encode_ms_median": 1.160917,
+          "encode_ms_min": 1.129792,
+          "encode_ms_max": 1.284625,
+          "decode_ms_median": 0.216167,
+          "encode_input_MiB_s": 215.76760547911692
+        }
+      }
+    },
+    {
+      "name": "u8_rgb_gradient",
+      "shape": [
+        512,
+        513,
+        3
+      ],
+      "dtype": "uint8",
+      "origin": "synthetic",
+      "input_bytes": 787968,
+      "sha256": "530818d0ffbea30bb4975c18b2abe4b7f98aa469c8d5f4711e945e64cff5ab33",
+      "modes": {
+        "raw": {
+          "container_bytes": 376421,
+          "payload_bytes": 376393,
+          "chosen_predictor": false,
+          "encode_ms_median": 4.444833,
+          "encode_ms_min": 4.34775,
+          "encode_ms_max": 4.557166,
+          "decode_ms_median": 0.722833,
+          "encode_input_MiB_s": 169.0648093527923
+        },
+        "predict": {
+          "container_bytes": 1544,
+          "payload_bytes": 1516,
+          "chosen_predictor": true,
+          "encode_ms_median": 2.245708,
+          "encode_ms_min": 2.212208,
+          "encode_ms_max": 2.296125,
+          "decode_ms_median": 0.62825,
+          "encode_input_MiB_s": 334.6226863643893
+        },
+        "adaptive": {
+          "container_bytes": 1544,
+          "payload_bytes": 1516,
+          "chosen_predictor": true,
+          "encode_ms_median": 6.447416,
+          "encode_ms_min": 6.393208,
+          "encode_ms_max": 6.676375,
+          "decode_ms_median": 0.61525,
+          "encode_input_MiB_s": 116.55287075473338
+        }
+      }
+    },
+    {
+      "name": "u8_random",
+      "shape": [
+        512,
+        513,
+        3
+      ],
+      "dtype": "uint8",
+      "origin": "synthetic negative control",
+      "input_bytes": 787968,
+      "sha256": "ac23d2dc6917190b3b52e403fea80480911cd3155a8c416e1e59a2ed37192774",
+      "modes": {
+        "raw": {
+          "container_bytes": 788247,
+          "payload_bytes": 788219,
+          "chosen_predictor": false,
+          "encode_ms_median": 8.710583,
+          "encode_ms_min": 8.657292,
+          "encode_ms_max": 8.778459,
+          "decode_ms_median": 0.091666,
+          "encode_input_MiB_s": 86.27032699763036
+        },
+        "predict": {
+          "container_bytes": 788247,
+          "payload_bytes": 788219,
+          "chosen_predictor": true,
+          "encode_ms_median": 9.68875,
+          "encode_ms_min": 9.600291,
+          "encode_ms_max": 9.75475,
+          "decode_ms_median": 0.552208,
+          "encode_input_MiB_s": 77.56055670236097
+        },
+        "adaptive": {
+          "container_bytes": 788247,
+          "payload_bytes": 788219,
+          "chosen_predictor": false,
+          "encode_ms_median": 18.320833,
+          "encode_ms_min": 18.234167,
+          "encode_ms_max": 18.441958,
+          "decode_ms_median": 0.091375,
+          "encode_input_MiB_s": 41.01695833098855
+        }
+      }
+    },
+    {
+      "name": "u16_smooth_field",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "uint16",
+      "origin": "synthetic",
+      "input_bytes": 525312,
+      "sha256": "eef59d750cd73c1b1c88db1048180c2ac967a2048e2d12a1e0f56c7acf3ce937",
+      "modes": {
+        "raw": {
+          "container_bytes": 521628,
+          "payload_bytes": 521600,
+          "chosen_predictor": false,
+          "encode_ms_median": 6.043542,
+          "encode_ms_min": 5.937041,
+          "encode_ms_max": 6.12675,
+          "decode_ms_median": 0.8715,
+          "encode_input_MiB_s": 82.89452815914905
+        },
+        "predict": {
+          "container_bytes": 1268,
+          "payload_bytes": 1240,
+          "chosen_predictor": true,
+          "encode_ms_median": 1.257042,
+          "encode_ms_min": 1.251167,
+          "encode_ms_max": 1.302958,
+          "decode_ms_median": 0.263792,
+          "encode_input_MiB_s": 398.53605726777624
+        },
+        "adaptive": {
+          "container_bytes": 1268,
+          "payload_bytes": 1240,
+          "chosen_predictor": true,
+          "encode_ms_median": 7.139167,
+          "encode_ms_min": 7.007375,
+          "encode_ms_max": 7.380334,
+          "decode_ms_median": 0.281458,
+          "encode_input_MiB_s": 70.17297151054179
+        }
+      }
+    },
+    {
+      "name": "u16_noisy_field",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "uint16",
+      "origin": "synthetic",
+      "input_bytes": 525312,
+      "sha256": "4dd34bd7fbfc0973bc7ccd76bb906bf68b6fc2e2e95241c2af780718c63131c6",
+      "modes": {
+        "raw": {
+          "container_bytes": 509719,
+          "payload_bytes": 509691,
+          "chosen_predictor": false,
+          "encode_ms_median": 8.630833,
+          "encode_ms_min": 8.510292,
+          "encode_ms_max": 8.887667,
+          "decode_ms_median": 0.860292,
+          "encode_input_MiB_s": 58.044983896687604
+        },
+        "predict": {
+          "container_bytes": 141727,
+          "payload_bytes": 141699,
+          "chosen_predictor": true,
+          "encode_ms_median": 7.302541,
+          "encode_ms_min": 7.250708,
+          "encode_ms_max": 7.396167,
+          "decode_ms_median": 0.563959,
+          "encode_input_MiB_s": 68.60304687094533
+        },
+        "adaptive": {
+          "container_bytes": 141727,
+          "payload_bytes": 141699,
+          "chosen_predictor": true,
+          "encode_ms_median": 15.89275,
+          "encode_ms_min": 15.753375,
+          "encode_ms_max": 16.17625,
+          "decode_ms_median": 0.560667,
+          "encode_input_MiB_s": 31.522333296628965
+        }
+      }
+    },
+    {
+      "name": "u16_random",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "uint16",
+      "origin": "synthetic negative control",
+      "input_bytes": 525312,
+      "sha256": "623f5e76a0a606bea6fcce1a99b3db5638e0f2440f908b393f527a81ca0133a0",
+      "modes": {
+        "raw": {
+          "container_bytes": 525511,
+          "payload_bytes": 525483,
+          "chosen_predictor": false,
+          "encode_ms_median": 5.801625,
+          "encode_ms_min": 5.722583,
+          "encode_ms_max": 5.833791,
+          "decode_ms_median": 0.064958,
+          "encode_input_MiB_s": 86.35107620709715
+        },
+        "predict": {
+          "container_bytes": 525511,
+          "payload_bytes": 525483,
+          "chosen_predictor": true,
+          "encode_ms_median": 6.1695,
+          "encode_ms_min": 6.092959,
+          "encode_ms_max": 6.195542,
+          "decode_ms_median": 0.223709,
+          "encode_input_MiB_s": 81.20213347921225
+        },
+        "adaptive": {
+          "container_bytes": 525511,
+          "payload_bytes": 525483,
+          "chosen_predictor": false,
+          "encode_ms_median": 11.810834,
+          "encode_ms_min": 11.738583,
+          "encode_ms_max": 11.854791,
+          "decode_ms_median": 0.052584,
+          "encode_input_MiB_s": 42.41669661092519
+        }
+      }
+    },
+    {
+      "name": "f32_smooth_field",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "float32",
+      "origin": "synthetic",
+      "input_bytes": 1050624,
+      "sha256": "96b0d661c7b4b7b064a83aa04751f7f121a192fbc230b2eccc729c79b2674cce",
+      "modes": {
+        "raw": {
+          "container_bytes": 950857,
+          "payload_bytes": 950829,
+          "chosen_predictor": false,
+          "encode_ms_median": 21.076459,
+          "encode_ms_min": 20.974583,
+          "encode_ms_max": 22.373125,
+          "decode_ms_median": 1.768166,
+          "encode_input_MiB_s": 47.53896871386223
+        },
+        "predict": {
+          "container_bytes": 626009,
+          "payload_bytes": 625981,
+          "chosen_predictor": true,
+          "encode_ms_median": 21.833709,
+          "encode_ms_min": 21.66525,
+          "encode_ms_max": 22.078084,
+          "decode_ms_median": 1.81125,
+          "encode_input_MiB_s": 45.89019323285842
+        },
+        "adaptive": {
+          "container_bytes": 626009,
+          "payload_bytes": 625981,
+          "chosen_predictor": true,
+          "encode_ms_median": 43.191209,
+          "encode_ms_min": 42.771,
+          "encode_ms_max": 43.2875,
+          "decode_ms_median": 1.809333,
+          "encode_input_MiB_s": 23.198080076897128
+        }
+      }
+    },
+    {
+      "name": "f32_random_bits",
+      "shape": [
+        512,
+        513,
+        1
+      ],
+      "dtype": "float32",
+      "origin": "synthetic negative control",
+      "input_bytes": 1050624,
+      "sha256": "517ac1988d9b1e7c22cd687e8e56a7056a0ae6fefac09ae38f600758b3354bc4",
+      "modes": {
+        "raw": {
+          "container_bytes": 1050983,
+          "payload_bytes": 1050955,
+          "chosen_predictor": false,
+          "encode_ms_median": 11.647625,
+          "encode_ms_min": 11.511208,
+          "encode_ms_max": 11.775458,
+          "decode_ms_median": 0.126542,
+          "encode_input_MiB_s": 86.02209677938636
+        },
+        "predict": {
+          "container_bytes": 1050983,
+          "payload_bytes": 1050955,
+          "chosen_predictor": true,
+          "encode_ms_median": 12.26675,
+          "encode_ms_min": 12.231125,
+          "encode_ms_max": 12.368833,
+          "decode_ms_median": 0.617166,
+          "encode_input_MiB_s": 81.68040638310882
+        },
+        "adaptive": {
+          "container_bytes": 1050983,
+          "payload_bytes": 1050955,
+          "chosen_predictor": false,
+          "encode_ms_median": 23.645084,
+          "encode_ms_min": 23.521875,
+          "encode_ms_max": 23.75675,
+          "decode_ms_median": 0.126583,
+          "encode_input_MiB_s": 42.37469086597451
+        }
+      }
+    },
+    {
+      "name": "uci_optical_digits_sheet",
+      "shape": [
+        344,
+        336,
+        1
+      ],
+      "dtype": "uint8",
+      "origin": "UCI optical digits via sklearn; all 1797 images, padded mosaic",
+      "input_bytes": 115584,
+      "sha256": "4605bc99d88c60f8cdd5c1f33ae5df2a02330d2b7da715c06044e21bf6ea35cb",
+      "modes": {
+        "raw": {
+          "container_bytes": 45152,
+          "payload_bytes": 45124,
+          "chosen_predictor": false,
+          "encode_ms_median": 6.138083,
+          "encode_ms_min": 5.362583,
+          "encode_ms_max": 7.785458,
+          "decode_ms_median": 0.167292,
+          "encode_input_MiB_s": 17.958292872139396
+        },
+        "predict": {
+          "container_bytes": 56195,
+          "payload_bytes": 56167,
+          "chosen_predictor": true,
+          "encode_ms_median": 4.89725,
+          "encode_ms_min": 4.522167,
+          "encode_ms_max": 5.103084,
+          "decode_ms_median": 0.250792,
+          "encode_input_MiB_s": 22.50844702383991
+        },
+        "adaptive": {
+          "container_bytes": 45152,
+          "payload_bytes": 45124,
+          "chosen_predictor": false,
+          "encode_ms_median": 8.763833,
+          "encode_ms_min": 8.69425,
+          "encode_ms_max": 8.993334,
+          "decode_ms_median": 0.119708,
+          "encode_input_MiB_s": 12.577771870767048
+        }
+      }
+    }
+  ]
+}

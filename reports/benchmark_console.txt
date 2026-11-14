@@ -1,0 +1,25 @@
+# Measured CPU benchmark
+
+Date: 14 November 2026. Re-run `OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=1 python tools/benchmark.py`.
+
+All figures below were measured on this run. Full distributions (min/median/max encode times), dataset hashes and environment are in `cpu_results.json`. Each mode is warmed once and repeated seven times. All decodes are compared byte-for-byte.
+
+Baseline = the same container and zlib level 6 without the predictor. Adaptive tries both representations and keeps the smaller; its encoding time includes BOTH compression passes. Savings include the identical container header. This is not a comparison against PNG, TIFF, nvCOMP or nvTIFF.
+
+| Dataset | Input bytes | Baseline bytes | Adaptive bytes | Size reduction | Baseline encode ms | Adaptive encode ms | Adaptive decode ms |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| u8_constant | 262656 | 305 | 305 | 0.00% | 0.814 | 1.826 | 0.622 |
+| u8_horizontal_ramp | 262656 | 2084 | 620 | 70.25% | 0.853 | 1.770 | 0.863 |
+| u8_vertical_ramp | 262656 | 1347 | 307 | 77.21% | 0.836 | 1.773 | 0.840 |
+| u8_rgb_gradient | 787968 | 376421 | 1544 | 99.59% | 8.512 | 11.774 | 1.743 |
+| u8_random | 787968 | 788247 | 788247 | 0.00% | 16.319 | 32.638 | 0.533 |
+| u16_smooth_field | 525312 | 521628 | 1268 | 99.76% | 12.646 | 14.109 | 1.612 |
+| u16_noisy_field | 525312 | 509719 | 141727 | 72.20% | 14.979 | 30.658 | 2.084 |
+| u16_random | 525312 | 525511 | 525511 | 0.00% | 10.609 | 21.144 | 0.354 |
+| f32_smooth_field | 1050624 | 950857 | 626009 | 34.16% | 33.652 | 70.208 | 4.553 |
+| f32_random_bits | 1050624 | 1050983 | 1050983 | 0.00% | 21.161 | 43.165 | 0.704 |
+| uci_optical_digits_sheet | 115584 | 45152 | 45152 | 0.00% | 8.130 | 16.282 | 0.427 |
+
+Across this fixed mixed suite: 4,772,254 baseline bytes versus 3,181,673 adaptive bytes (33.33% smaller). This aggregate is strongly dataset-dependent; it is not a production compression claim.
+
+## Interpretation
